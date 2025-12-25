@@ -1,0 +1,59 @@
+import streamlit as st
+
+def load_css():
+    with open("style.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+st.set_page_config(
+    page_title="Idriss – AI Portfolio",
+    page_icon="💡",
+    layout="wide"
+)
+
+load_css()  # 🔥 OBLIGATOIRE
+
+
+st.title("📂 Projects")
+
+st.write(
+    "Explore my work across different domains, including Machine Learning, "
+    "AI for Business Transformation, and Software & Data Engineering."
+)
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.markdown("### 🧠 Machine Learning")
+    st.write(
+        "Supervised learning, neural networks, model evaluation, "
+        "and predictive analytics."
+    )
+    st.page_link(
+        "Pages/5_🧠_Machine_Learning.py",
+        label="View projects →",
+        icon="🧠"
+    )
+
+with col2:
+    st.markdown("### 💼 AI for Business Transformation")
+    st.write(
+        "AI-driven decision support, forecasting, "
+        "and optimization for business use cases."
+    )
+    st.page_link(
+        "Pages/6_💼_AI_for_Business.py",
+        label="View projects →",
+        icon="💼"
+    )
+
+with col3:
+    st.markdown("### ⚙️ Software & Data Engineering")
+    st.write(
+        "Backend development, APIs, data pipelines, "
+        "and engineering workflows."
+    )
+    st.page_link(
+        "Pages/7_⚙️_Engineering.py",
+        label="View projects →",
+        icon="⚙️"
+    )
